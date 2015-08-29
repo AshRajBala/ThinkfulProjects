@@ -41,14 +41,14 @@ git add .
 git commit -m "Initial commit"
 git status
 Terminal output (if successful commit): "Nothing to commit, working directory clean".
-git remote add origin git@github.com:AshRajBala/ThinkfulProjects.git
+git remote add origin git@github.com:AshRajBala/ThinkfulProjects.git #Do this only once
 git push origin master
 
 For specific file (e.g. example.py; located at /Users/AshRajBala/Repositories/ThinkfulProjects)
 At terminal (cd /Users/AshRajBala/Repositories/ThinkfulProjects; i.e. @ pwd), type:
 git add example.py
 git commit -m 'Create example.py'
-git remote add origin git@github.com:AshRajBala/ThinkfulProjects.git
+git remote add origin git@github.com:AshRajBala/ThinkfulProjects.git #Do this only once
 git push origin master
 """
 
