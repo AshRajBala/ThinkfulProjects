@@ -75,5 +75,6 @@ with con:
   cols = [desc[0] for desc in cur.description]
   df = pd.DataFrame(rows,columns=cols)
   
+  #join(df["city"].values -> joins array of elements
   print("The cities warmest in July are: %s" % ', '.join(df["city"].values)) #', '.join(df["city"].values will return a comma-separated string
 #REF: http://stackoverflow.com/questions/30001080/how-to-print-pandas-dataframe-values-in-a-sentence
