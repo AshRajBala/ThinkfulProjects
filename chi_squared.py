@@ -22,3 +22,11 @@ plt.show()
 chi2, p = scipy.stats.chisquare([freq.values()])
 msg = "Test Statistic: {}\np-value: {}"
 print(msg.format( chi2, p))
+
+"""
+Previously, i had set 'agg' as backend that screwed up the GUI plot.
+If that happens, do this at the terminal:
+$ spyder --reset
+$ spyder
+"""
+
