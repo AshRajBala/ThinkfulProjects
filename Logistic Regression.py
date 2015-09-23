@@ -48,7 +48,7 @@ import statsmodels.api as sm
 
 # In[7]:
 
-ind_vars = loansData.columns[1:-13]
+ind_vars = loansData.columns[1:-11]
 
 
 # In[8]:
@@ -63,62 +63,68 @@ X = np.asarray(df2[ind_vars])
 
 # In[10]:
 
-y = np.asarray(df2['Logit.Interest.Rate'])
+X
 
 
 # In[11]:
 
-f = "y ~ X"
+y = np.asarray(df2['Logit.Interest.Rate'])
 
 
 # In[12]:
+
+f = "y ~ X"
+
+
+# In[13]:
 
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
 
-# In[13]:
+# In[14]:
 
 logit_mod = sm.Logit(y,X)
 
 
-# In[14]:
+# In[15]:
 
 logit_res = logit_mod.fit()
 print(logit_res.summary())
 
 
-# In[15]:
-
-logit_res.predict([1,10000])
-
-
 # In[16]:
 
-x=np.arange(100,50001,100)
-
-
-# In[22]:
-
-np.ones(len(x));
+logit_res.predict([1,10000,720])
 
 
 # In[18]:
 
-proby= logit_res.predict(np.column_stack([np.ones(len(x)),x]))
+from matplotlib import pyplot as plt
+get_ipython().magic('matplotlib inline')
 
 
 # In[19]:
 
-from matplotlib import pyplot as plot
+x=np.arange(100,20001,100)
 
 
 # In[20]:
 
-get_ipython().magic('matplotlib inline')
+np.ones(len(x))
 
 
 # In[21]:
 
-plot.plot(x,1-proby)
+proby= logit_res.predict(np.column_stack([np.ones(len(x)),x,x]))
+
+
+# In[24]:
+
+plt.plot(x,proby)
+
+
+# In[ ]:
+
+
 
